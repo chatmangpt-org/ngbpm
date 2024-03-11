@@ -1,0 +1,39 @@
+- actor_id: 1
+  metadata: {}
+  content: "Details about starting the process"
+  message_type: "ngbpm.commands.ProcessStartCommand"
+
+- actor_id: 2
+  metadata: {}
+  content: "Details about stopping the process"
+  message_type: "ngbpm.commands.ProcessStopCommand"
+
+- actor_id: 3
+  metadata: {}
+  content: "Details about the activity to start"
+  message_type: "ngbpm.commands.ActivityStartCommand"
+
+- actor_id: 4
+  metadata: {}
+  content: "Details about completing the activity"
+  message_type: "ngbpm.commands.ActivityCompleteCommand"
+
+- actor_id: 5
+  metadata: {}
+  content: "Details for invoking partner service"
+  message_type: "ngbpm.commands.InvokePartnerServiceCommand"
+
+- actor_id: 6
+  metadata: {}
+  content: "Details for receiving data from partner"
+  message_type: "ngbpm.commands.ReceivePartnerDataCommand"
+
+- actor_id: 7
+  metadata: {}
+  content: "Details for saving process instance state"
+  message_type: "ngbpm.commands.SaveProcessInstanceCommand"
+
+- actor_id: 8
+  metadata: {}
+  content: "Details for loading process instance state"
+  message_type: "ngbpm.commands.LoadProcessInstanceCommand"

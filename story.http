@@ -1,0 +1,102 @@
+### Story Begins: A new activity is initiated in the system
+
+# Start a new activity
+POST http://localhost:8888/activitystartcommand/
+Content-Type: application/json
+
+{
+  "task_id": "task-123",
+  "parameters": {
+    "description": "Design phase of project X",
+    "estimated_hours": 40
+  }
+}
+
+### The activity has begun, and we receive an update that the activity is started.
+
+### After some time, the activity is completed
+
+POST http://localhost:8888/activitycompletecommand/
+Content-Type: application/json
+
+{
+  "task_id": "task-123",
+  "outcome": {
+    "actual_hours": 38,
+    "status": "completed",
+    "remarks": "Finished 2 hours ahead of estimate."
+  }
+}
+
+### As part of the activity, we need to interact with an external partner service
+
+# Invoke an external partner service
+POST http://localhost:8888/invokepartnerservicecommand/
+Content-Type: application/json
+
+{
+  "service_name": "ExternalAccountingService",
+  "parameters": {
+    "task_id": "task-123",
+    "service_action": "ConfirmActivityCompletion"
+  }
+}
+
+### We receive data from the partner service confirming the action
+
+# Receive data from the partner service
+POST http://localhost:8888/receivepartnerdatacommand/
+Content-Type: application/json
+
+{
+  "service_name": "ExternalAccountingService",
+  "data": {
+    "confirmation": "ActivityConfirmed",
+    "task_id": "task-123"
+  }
+}
+
+### Initiating the overarching process that includes the activity
+
+# Start process
+POST http://localhost:8888/processstartcommand/
+Content-Type: application/json
+
+{
+  "process_id": "process-456"
+}
+
+### Eventually, the process is stopped
+
+# Stop process
+POST http://localhost:8888/processstopcommand/
+Content-Type: application/json
+
+{
+  "process_id": "process-456"
+}
+
+### Save the state of the process instance
+
+# Save process instance
+POST http://localhost:8888/saveprocessinstancecommand/
+Content-Type: application/json
+
+{
+  "process_id": "process-456",
+  "instance_data": {
+    "status": "stopped",
+    "completed_activities": ["task-123"],
+    "pending_activities": []
+  }
+}
+
+### At some point, we need to load the state of a process instance
+
+# Load process instance
+POST http://localhost:8888/loadprocessinstancecommand/
+Content-Type: application/json
+
+{
+  "process_id": "process-456"
+}
