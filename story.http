@@ -7,7 +7,7 @@ Content-Type: application/json
 {
   "task_id": "task-123",
   "parameters": {
-    "description": "Design phase of project X",
+    "description": "Start project X",
     "estimated_hours": 40
   }
 }
@@ -39,7 +39,8 @@ Content-Type: application/json
   "parameters": {
     "task_id": "task-123",
     "service_action": "ConfirmActivityCompletion"
-  }
+  },
+  "content": "Depositing a million dollar check"
 }
 
 ### We receive data from the partner service confirming the action
@@ -53,7 +54,8 @@ Content-Type: application/json
   "data": {
     "confirmation": "ActivityConfirmed",
     "task_id": "task-123"
-  }
+  },
+  "content": "The check has been deposited"
 }
 
 ### Initiating the overarching process that includes the activity
@@ -63,7 +65,8 @@ POST http://localhost:8888/processstartcommand/
 Content-Type: application/json
 
 {
-  "process_id": "process-456"
+  "process_id": "process-million-dollar-check",
+  "content": "Customer has approved the project"
 }
 
 ### Eventually, the process is stopped
@@ -73,7 +76,8 @@ POST http://localhost:8888/processstopcommand/
 Content-Type: application/json
 
 {
-  "process_id": "process-456"
+  "process_id": "process-million-dollar-check",
+  "content": "The project is completed"
 }
 
 ### Save the state of the process instance

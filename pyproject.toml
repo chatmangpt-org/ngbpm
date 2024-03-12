@@ -4,11 +4,11 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]  # https://python-poetry.org/docs/pyproject/
 name = "ngbpm"
-version = "2024.3.10.2"
+version = "2024.3.10.3"
 description = "Next-Generation Business Process Management"
 authors = ["Sean Chatman <info@chatmangpt.com>"]
 readme = "README.md"
-repository = "https://github.com/seanchatmangpt/ngbpm"
+repository = "https://github.com/chatmangpt-org/ngbpm"
 
 [tool.poetry.scripts]  # https://python-poetry.org/docs/pyproject/#scripts
 ngbpm = "ngbpm.cli:app"
@@ -18,7 +18,6 @@ coloredlogs = ">=15.0.1"
 fastapi = { extras = ["all"], version = ">=0.92.0" }
 gunicorn = ">=20.1.0"
 poethepoet = ">=0.20.0"
-pydantic = ">=1.10.7"
 python = ">=3.10,<4.0"
 streamlit = ">=1.19.0"
 typer = { extras = ["all"], version = ">=0.9.0" }
@@ -26,6 +25,7 @@ uvicorn = { extras = ["standard"], version = ">=0.20.0" }
 inflection = "^0.5.1"
 dspygen = "^2024.3.10.4"
 dspy-ai = "2.3.1"
+pydantic = "^2.6.3"
 
 [tool.poetry.group.test.dependencies]  # https://python-poetry.org/docs/master/managing-dependencies/
 coverage = { extras = ["toml"], version = ">=7.2.5" }

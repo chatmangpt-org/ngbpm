@@ -125,6 +125,7 @@ venv.bak/
 .spyproject
 
 # Rope project settings
+.DS_Store
 .ropeproject
 
 # mkdocs documentation

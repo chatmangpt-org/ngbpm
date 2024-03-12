@@ -77,6 +77,7 @@ def create_routes_for_message_classes():
     messages_module = importlib.import_module('ngbpm.rddd.messages')
     for name, obj in inspect.getmembers(messages_module, inspect.isclass):
         if issubclass(obj, BaseModel) and obj is not BaseModel:
+            print(f"Creating route for message class: {obj.__name__}")
             create_route_for_message_class(obj)
 
 

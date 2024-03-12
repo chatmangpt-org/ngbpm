@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../dspygen" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../dspygen/src/dspygen/experiments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
